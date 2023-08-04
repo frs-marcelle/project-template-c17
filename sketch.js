@@ -15,7 +15,7 @@ function preload(){
   diamondsImg = loadImage("diamonds.png");
   jwelleryImg = loadImage("jwell.png");
   swordImg = loadImage("sword.png");
- // endImg =loadAnimation("gameOver.png");
+  endImg =loadAnimation("gameOver.png");
 }
 
 function setup(){
@@ -67,18 +67,24 @@ function draw() {
     else if (diamondsG.isTouching(boy)) {
       diamondsG.destroyEach();
             //aumente a treasureCollection para 100
-   
+          treasureCollection=treasureCollection+100;
     }
     else if(jwelleryG.isTouching(boy)) {
       jwelleryG.destroyEach();
             //aumente a treasureCollection para 150
-
+            treasureCollection=treasureCollection+150;
           }
     else{
       if(swordGroup.isTouching(boy)) {
 //Mude o gameState (estado do jogo) para End
+gameState===END;
 //destrua todos os grupos
+cashG.destroyEach();
+diamondsG.destroyEach();
+jwelleryG.destroyEach();
+swordGroup.destroyEach();
 // defina setvelocityEach como 0 para todos os grupos
+velocityEach = 0 (cashG, diamondsG, jwelleryG, swordGroup)
     }
 
   }
